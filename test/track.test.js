@@ -48,6 +48,7 @@ describe('🎧 TRACKS ROUTES', () => {
     await supertest(app)
       .put(`/api/tracks/${persistentDatas.createdTrack.id}`)
       .send({
+        ...trackToCreate,
         title: 'Bohemian Rhapsody',
       })
       .expect(204);
